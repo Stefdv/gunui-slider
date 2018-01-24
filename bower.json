@@ -13,7 +13,7 @@
     "iron-component-page": "PolymerElements/iron-component-page#^3.0.1",
     "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^2.1.0",
     "gunui-base": "*",
-    "gunui-progress": "^0.0.1"
+    "gunui-progress": "*"
   },
   "resolutions": {
     "polymer": "^2.0.0"
