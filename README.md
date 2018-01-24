@@ -41,7 +41,7 @@ bower install gunui-slider --save
     <gunui-base></gunui-base>
 
     <!-- somewhere in your app, or in a custom element -->
-    <gunui-slider soul="lights" prop="lights.1.state">Light 1</gunui-slider>
+    <gunui-slider soul="lights" prop="lights.1.state.bri"></gunui-slider>
 
   </body>
 </html>
