@@ -200,7 +200,7 @@
 
       hasGun() {
         if(this.soul && this._hasGun) { // at least give me that !
-          console.log(`path(${this.prop + '.' + this.key})`)
+         
           this.gctx = GunUi.gun.get(this.soul).path(this.prop + '.' + this.key)
           this.subscribe ? this._subscribe() : this._getInitialData();
           if(this.secSoul){ this.subscribeSec ? this._subscribeSec() : this._getSecInitialData();}
@@ -210,7 +210,8 @@
       }
 
        _valueChanged(value) {
-        if(!this.instant && this.gctx) {
+        if(!this.instant && this.gctx && value) {
+           console.log(`GunUi.gun.get("${this.soul}").path(${this.prop + '.' + this.key}).put(${value})`)
           this.gctx.put(value)
         }
         if(this.secValue) {
@@ -219,7 +220,8 @@
       }
 
       _immediateValueChanged(imVal) {
-        if(this.instant) {
+        if(this.instant && imVal) {
+         // console.log(`(instant) path(${this.prop + '.' + this.key})`)
           this.gctx.put(imVal)
         }
       }
@@ -247,7 +249,7 @@
         GunUi.gun.get(this.soul).path(this.prop).val(data=>{
           if(data) {
             this.indeterminate = false;
-            this.value= data[this.key]
+            this.value= data[this.key] || data
           } else {
             this.indeterminate = true;
           }
@@ -257,7 +259,7 @@
        _subscribe(){
          GunUi.gun.get(this.soul).path(this.prop).on(data=>{
            this.indeterminate = false;
-           this.value = data[this.key]
+           this.value = data[this.key] || data
  
         })
       }

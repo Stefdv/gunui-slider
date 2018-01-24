@@ -129,15 +129,20 @@
         </demo-box>
 
         <h3>Custom key</h3>
-        <p>Maybe sometimes you will need another key instead of the default 'value', like with Philips HUE ( that uses <span>lights.1.state.bri</span> just set the attribute <span>key="bri"</span> and now the slider will set <prism-demo code="{bri:30}"></prism-demo></p>
+        <p>By default the value will be stored as <prism-demo code="{value:50)" inline></prism-demo> but sometimes you might need another key ( as with Philips HUE wich needs <prism-demo code="{bri:254)" inline></prism-demo> ).<br>Just set the attribute <span>key="bri"</span> and the value will be stored as <prism-demo code="{bri:254)" inline></prism-demo></p>
+     
         <demo-box>
           <template>
-            <!-- will do gun.get('HUE').path("light.1.state").put( { value:50} ) -->
-            <gunui-slider soul="HUE" prop="light.1.state"></gunui-slider>
+            <!-- will do gun.get('HUE').path("light.1.state.bri").put( { value:50} ) -->
 
-            <!-- will do gun.get('HUE').path("light.1.state").put( { bri:50} )  -->      
-            <gunui-slider soul="Engines" prop="light.1.state" key="bri"></gunui-slider>
-        
+            <p>value stored as <prism-demo code="{value:50}" inline></prism-demo> </p>
+            <gunui-slider soul="HUE" prop="light.1.state.bri" instant></gunui-slider>
+            <gunui-progress soul="HUE" prop="light.1.state.bri.value" subscribe></gunui-progress>
+
+            <!-- will do gun.get('HUE').path("light.1.state").put( { hue:50} )  -->    
+            <p>value stored as <prism-demo code="{bri:50}" inline></prism-demo> </p>
+            <gunui-slider soul="HUE" prop="light.1.state" key="hue" instant></gunui-slider>
+            <gunui-progress soul="HUE" prop="light.1.state.hue" subscribe></gunui-progress>
           </template>
         </demo-box>
 

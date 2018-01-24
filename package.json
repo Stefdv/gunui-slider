@@ -1,0 +1,30 @@
+{
+  "name": "gunui-slider",
+  "version": "1.0.0",
+  "description": "Visual control of a numeric value in your Gun data",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stefdv/gunui-slider.git"
+  },
+  "keywords": [
+    "Gun",
+    "dataviz",
+    "visual",
+    "slider",
+    "gunui",
+    "GunUi"
+  ],
+  "author": "Stefdv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Stefdv/gunui-slider/issues"
+  },
+  "homepage": "https://github.com/Stefdv/gunui-slider#readme"
+}
